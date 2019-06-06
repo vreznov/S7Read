@@ -52,7 +52,7 @@ void KS7Reader::KInit()
 void KS7Reader::Req()
 {
 //    ReadTempture();
-    ReqCt();
+    ReqData(2, 0, 8);
 }
 
 void KS7Reader::ReadTempture()
@@ -78,10 +78,12 @@ void KS7Reader::ReadTempture()
     }
 }
 
-void KS7Reader::ReqCt()
+void KS7Reader::ReqData(int fml_db, int fml_stIndex, int fml_len)
 {
+
     memset(_ctData, 0, sizeof(_ctData));
-    int ret = clt.DBRead(2, 0, 4*10, _ctData);
+//    int ret = clt.DBRead(23, 0, 4, _ctData);
+    int ret = clt.DBRead(fml_db, fml_stIndex, fml_len, _ctData);
     if(ret != 0)
     {
         cout<<"read error"<<endl;
@@ -105,6 +107,14 @@ void KS7Reader::ReqCt()
         cout<<"read val: "<<_ctData[0]<<endl;
 //        printf("read val is: %08x\r\n", _ctData[0]);
     }
+}
+
+
+void KS7Reader::GetCpuInfo()
+{
+    TS7CpuInfo cinfo = {};
+    int ret = clt.GetCpuInfo(&cinfo);
+    mc<<"readccpu info"<<ret<<me;
 }
 
 void KS7Reader::setIp(QString fml_ip)

@@ -1,4 +1,4 @@
-QT -= gui
+QT += gui widgets
 
 CONFIG += c++11 console
 CONFIG -= app_bundle
@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     snap7/s7_peer.cpp \
     snap7/snap_msgsock.cpp \
     snap7/snap_sysutils.cpp \
-    snap7/snap_threads.cpp
+    snap7/snap_threads.cpp \
+    mainwindow.cpp
 
 HEADERS += \
     ks7reader.h \
@@ -43,10 +44,14 @@ HEADERS += \
     snap7/snap_threads.h \
     snap7/snap7_libmain.h \
     snap7/sol_threads.h \
-    snap7/win_threads.h
+    snap7/win_threads.h \
+    mainwindow.h
 
 INCLUDEPATH += $$PWD//snap7
 
 # ws2_32.lib WINDOWS SOCKET库
 # winmm.lib windows标准库
 LIBS += -lws2_32  -lwinmm
+
+FORMS += \
+    mainwindow.ui
