@@ -117,9 +117,10 @@ void KS7Reader::GetCpuInfo()
     mc<<"readccpu info"<<ret<<me;
 }
 
-void KS7Reader::setIp(QString fml_ip)
+void KS7Reader::setIp(QString fml_ip, short fml_slot)
 {
     _ip = fml_ip;
+    m_slot = fml_slot;
 }
 
 qint32 KS7Reader::getCtData(int fml_index)

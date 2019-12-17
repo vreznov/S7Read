@@ -1,0 +1,12 @@
+debug/main.o
+debug/ks7reader.o
+debug/s7_client.o
+debug/s7_isotcp.o
+debug/s7_micro_client.o
+debug/s7_peer.o
+debug/snap_msgsock.o
+debug/snap_sysutils.o
+debug/snap_threads.o
+debug/mainwindow.o
+debug/moc_ks7reader.o
+debug/moc_mainwindow.o

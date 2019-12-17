@@ -25,7 +25,7 @@ void MainWindow::KInit()
 
 void MainWindow::on_pushButton_clicked()
 {
-    s7r.setIp(ui->lineEdit_3->text());
+    s7r.setIp(ui->lineEdit_3->text(), ui->lineEdit->text().toShort());
     int ret = s7r.cnnt();
     if(!ret)
         tmr.start();

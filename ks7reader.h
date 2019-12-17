@@ -45,7 +45,7 @@ private:
     short m_slot = 1; //s7-1200 槽号1. s7-300槽号2
 
 public:
-    void setIp(QString fml_ip);
+    void setIp(QString fml_ip, short fml_slot=1);
     S7_DINT getCtData(int fml_index = 0);
 signals:
 

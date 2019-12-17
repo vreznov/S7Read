@@ -1,0 +1,12 @@
+release/main.o
+release/ks7reader.o
+release/s7_client.o
+release/s7_isotcp.o
+release/s7_micro_client.o
+release/s7_peer.o
+release/snap_msgsock.o
+release/snap_sysutils.o
+release/snap_threads.o
+release/mainwindow.o
+release/moc_ks7reader.o
+release/moc_mainwindow.o
