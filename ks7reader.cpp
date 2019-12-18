@@ -52,7 +52,7 @@ void KS7Reader::KInit()
 void KS7Reader::Req()
 {
 //    ReadTempture();
-    ReqData(2, 0, 8);
+    ReqData(23, 0, 4);
 }
 
 void KS7Reader::ReadTempture()
@@ -82,8 +82,9 @@ void KS7Reader::ReqData(int fml_db, int fml_stIndex, int fml_len)
 {
 
     memset(_ctData, 0, sizeof(_ctData));
-//    int ret = clt.DBRead(23, 0, 4, _ctData);
-    int ret = clt.DBRead(fml_db, fml_stIndex, fml_len, _ctData);
+    int ret = clt.DBRead(23, 0, 4, _ctData);
+    int ret2 = clt.DBRead(24, 0, 4, &_ctData[4]);
+//    int ret = clt.DBRead(fml_db, fml_stIndex, fml_len, _ctData);
     if(ret != 0)
     {
         cout<<"read error"<<endl;
